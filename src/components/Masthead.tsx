@@ -1,29 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-
-const STATIC_TODAY = "TODAY";
-
-function useToday() {
-  const [today, setToday] = useState(STATIC_TODAY);
-  useEffect(() => {
-    setToday(
-      new Date()
-        .toLocaleDateString("en-GB", {
-          weekday: "long",
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        })
-        .toUpperCase()
-    );
-  }, []);
-  return today;
-}
+import { useTodayString } from "@/lib/useToday";
 
 export default function Masthead() {
-  const today = useToday();
+  // Long form: "Sunday, 26 April 2026"
+  const today = useTodayString({
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   return (
     <header className="relative w-full pt-6 pb-3 paper-grain">
       {/* Top thin info strip */}

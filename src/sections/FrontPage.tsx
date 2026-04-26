@@ -4,8 +4,14 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Masthead from "@/components/Masthead";
 import StockTicker from "@/components/StockTicker";
+import { useTodayString } from "@/lib/useToday";
 
 export default function FrontPage() {
+  const todayShort = useTodayString({
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
   return (
     <section className="relative min-h-screen paper-texture">
       <Masthead />
@@ -48,7 +54,7 @@ export default function FrontPage() {
 
         {/* Byline */}
         <p className="col-span-12 smcp text-[12px] text-ink-soft -mt-4">
-          BY THE EDITORIAL DESK · MADRID · <span suppressHydrationWarning>{new Date().toLocaleDateString("en-GB").toUpperCase()}</span>
+          BY THE EDITORIAL DESK · MADRID · <span suppressHydrationWarning>{todayShort}</span>
         </p>
 
         {/* Lead column with photo */}
