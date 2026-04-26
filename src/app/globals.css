@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+@theme {
+  /* === Newspaper foundation (Section 0 + global frame) === */
+  --color-paper: #f3ecdb;
+  --color-paper-deep: #e8dfc6;
+  --color-paper-edge: #d8cdb0;
+  --color-ink: #1a1714;
+  --color-ink-soft: #3a3530;
+  --color-ink-faded: #6b6258;
+  --color-rule: #b9ad94;
+  --color-tribune-red: #8b1a1a;
+  --color-tribune-red-dark: #5e1010;
+
+  /* === Section 1: Trading Floor (Bloomberg dark) === */
+  --color-trade-bg: #0a0a0b;
+  --color-trade-panel: #131418;
+  --color-trade-grid: #1f2126;
+  --color-trade-up: #00ff87;
+  --color-trade-down: #ff3d71;
+  --color-trade-amber: #ffc42e;
+  --color-trade-text: #e8e8e8;
+  --color-trade-muted: #8a8a8a;
+
+  /* === Section 2: Football (stadium) === */
+  --color-pitch: #0f7a2e;
+  --color-pitch-deep: #0a5320;
+  --color-pitch-line: #fafafa;
+  --color-floodlight: #ffd93d;
+  --color-night: #0b1420;
+
+  /* === Section 3: Tennis (Roland-Garros clay) === */
+  --color-clay: #c84f2d;
+  --color-clay-deep: #a23a1d;
+  --color-court-cream: #f5efe0;
+  --color-court-line: #fafafa;
+
+  /* === Section 4: Tarifa (windsurf / ocean) === */
+  --color-ocean: #0a4a6e;
+  --color-ocean-deep: #053048;
+  --color-foam: #e8f4f8;
+  --color-sail: #ff6b35;
+  --color-sunset: #f4a37c;
+
+  /* === Section 5: Logbook (trader's leather journal) === */
+  --color-logbook-bg: #1a1f2e;
+  --color-logbook-paper: #efe8d8;
+  --color-logbook-oxblood: #7a2424;
+  --color-logbook-gold: #c9a24a;
+
+  /* === Fonts === */
+  --font-display: var(--font-display), "Playfair Display", Georgia, serif;
+  --font-headline: var(--font-headline), "Old Standard TT", Georgia, serif;
+  --font-body: var(--font-body), "Crimson Pro", Georgia, serif;
+  --font-mono: var(--font-mono), "JetBrains Mono", "SFMono-Regular", monospace;
+  --font-blackletter: var(--font-blackletter), "UnifrakturMaguntia", serif;
+  --font-sans: var(--font-sans), Inter, system-ui, sans-serif;
+}
+
+/* Subtle paper texture — repeating noise, very low alpha */
+.paper-texture {
+  background-color: var(--color-paper);
+  background-image:
+    radial-gradient(rgba(60, 40, 20, 0.045) 1px, transparent 1px),
+    radial-gradient(rgba(60, 40, 20, 0.025) 1px, transparent 1px);
+  background-size: 4px 4px, 8px 8px;
+  background-position: 0 0, 2px 2px;
+}
+
+.paper-grain {
+  position: relative;
+}
+.paper-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(80, 50, 20, 0.04) 1px, transparent 1px);
+  background-size: 3px 3px;
+  mix-blend-mode: multiply;
+  z-index: 0;
+}
+
+.ink-shadow {
+  text-shadow: 0 0.5px 0 rgba(60, 40, 20, 0.15);
+}
+
+.headline-leading {
+  line-height: 0.95;
+}
+
+/* Italic glyphs in Crimson Pro / Playfair lean rightward and visually crash
+   into the next word. Give inline emphasis tags a tiny breathing buffer
+   so "the loop matters" reads correctly on every screen. */
+em,
+i,
+cite {
+  padding-right: 0.12em;
+}
+strong + * {
+  /* no-op; kept here so the rule above doesn't accidentally cascade */
+}
+
+.smcp {
+  font-feature-settings: "smcp", "c2sc";
+  font-variant-caps: small-caps;
+  letter-spacing: 0.08em;
+}
+
+/* Old-school newspaper rule */
+.double-rule {
+  border-top: 3px double var(--color-ink);
+  border-bottom: 3px double var(--color-ink);
+}
+
+.thin-rule {
+  border-top: 1px solid var(--color-ink);
+}
+
+/* Drop cap */
+.dropcap::first-letter {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 5.5rem;
+  line-height: 0.85;
+  float: left;
+  padding: 0.25rem 0.6rem 0 0;
+  color: var(--color-ink);
+}
+
+/* Column rules between newspaper columns */
+.col-rule > * + * {
+  border-left: 1px solid var(--color-rule);
+  padding-left: 1rem;
+}
+
+@media (max-width: 768px) {
+  .col-rule > * + * {
+    border-left: 0;
+    padding-left: 0;
+    border-top: 1px solid var(--color-rule);
+    padding-top: 1rem;
+  }
+}
+
+/* Selection — newspaper red */
+::selection {
+  background: var(--color-tribune-red);
+  color: var(--color-paper);
+}
+
+html,
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+body {
+  background-image:
+    radial-gradient(rgba(60, 40, 20, 0.04) 1px, transparent 1px),
+    radial-gradient(rgba(60, 40, 20, 0.02) 1px, transparent 1px);
+  background-size: 4px 4px, 8px 8px;
+  background-position: 0 0, 2px 2px;
+}
