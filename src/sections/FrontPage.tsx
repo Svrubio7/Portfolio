@@ -12,7 +12,7 @@ export default function FrontPage() {
 
       <StockTicker variant="paper" />
 
-      <article className="mx-auto max-w-[1200px] px-6 pt-10 pb-16 grid grid-cols-1 md:grid-cols-12 gap-8">
+      <article className="mx-auto max-w-[1200px] px-4 sm:px-6 pt-6 sm:pt-10 pb-12 sm:pb-16 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
         {/* Section labels above headline */}
         <div className="col-span-12 flex justify-between items-end">
           <p className="smcp text-[11px] text-tribune-red font-bold">
@@ -60,7 +60,7 @@ export default function FrontPage() {
         >
           {/* Photo with caption */}
           <figure className="relative">
-            <div className="relative w-full aspect-[4/5] md:aspect-[5/4] bg-paper-deep border border-ink overflow-hidden">
+            <div className="relative w-full aspect-square md:aspect-[5/4] bg-paper-deep border border-ink overflow-hidden max-w-[18rem] sm:max-w-none mx-auto md:mx-0">
               <Image
                 src="/characters/casual.png"
                 alt="The analyst at his desk"

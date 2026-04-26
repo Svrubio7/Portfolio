@@ -26,7 +26,7 @@ export default function Contact() {
         }}
       />
 
-      <div className="relative max-w-[1100px] mx-auto px-6 py-24 flex-1 flex flex-col justify-center w-full">
+      <div className="relative max-w-[1100px] mx-auto px-4 sm:px-6 py-14 md:py-24 flex-1 flex flex-col justify-center w-full">
         <motion.p
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}

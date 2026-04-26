@@ -11,7 +11,7 @@ export default function SportsDesk() {
   return (
     <section className="relative">
       {/* Section divider — break from trading floor */}
-      <div className="bg-trade-bg py-16 text-center">
+      <div className="bg-trade-bg py-10 md:py-16 text-center px-4">
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -74,13 +74,13 @@ function FootballPanel() {
       {/* Center circle */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[40vw] aspect-square rounded-full border-2 border-white/15 pointer-events-none" />
 
-      <div className="relative max-w-[1400px] mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-12 gap-8 w-full items-center">
+      <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 py-12 md:py-20 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 w-full items-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.9, x: -40 }}
           whileInView={{ opacity: 1, scale: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="md:col-span-5 relative aspect-[3/4] max-w-md mx-auto md:mx-0"
+          className="md:col-span-5 relative aspect-square sm:aspect-[3/4] max-w-[14rem] sm:max-w-md mx-auto md:mx-0"
         >
           <Image
             src="/characters/footballer.png"
@@ -172,7 +172,7 @@ function TennisPanel() {
         }}
       />
 
-      <div className="relative max-w-[1400px] mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-12 gap-8 w-full items-center">
+      <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 py-12 md:py-20 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 w-full items-center">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -235,7 +235,7 @@ function TennisPanel() {
           whileInView={{ opacity: 1, scale: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="md:col-span-5 md:order-2 order-1 relative aspect-[3/4] max-w-md mx-auto md:mx-0"
+          className="md:col-span-5 md:order-2 order-1 relative aspect-square sm:aspect-[3/4] max-w-[14rem] sm:max-w-md mx-auto md:mx-0"
         >
           <Image
             src="/characters/tennis.png"
@@ -284,13 +284,13 @@ function TarifaPanel() {
         }}
       />
 
-      <div className="relative max-w-[1400px] mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-12 gap-8 w-full items-center">
+      <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 py-12 md:py-20 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 w-full items-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.9, x: -40 }}
           whileInView={{ opacity: 1, scale: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="md:col-span-5 relative aspect-[3/4] max-w-md mx-auto md:mx-0"
+          className="md:col-span-5 relative aspect-square sm:aspect-[3/4] max-w-[14rem] sm:max-w-md mx-auto md:mx-0"
         >
           <Image
             src="/characters/windsurfer.png"

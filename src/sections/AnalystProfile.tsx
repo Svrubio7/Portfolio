@@ -22,7 +22,7 @@ export default function AnalystProfile() {
         }}
       />
 
-      <div className="relative max-w-[1400px] mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+      <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 py-14 md:py-24 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
         {/* Left: photo + small label */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -31,7 +31,7 @@ export default function AnalystProfile() {
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           className="md:col-span-5"
         >
-          <div className="relative aspect-[4/5] bg-paper-deep border-2 border-ink overflow-hidden max-w-md mx-auto">
+          <div className="relative aspect-square sm:aspect-[4/5] bg-paper-deep border-2 border-ink overflow-hidden max-w-[15rem] sm:max-w-md mx-auto">
             <Image
               src="/characters/casual.png"
               alt="Sergio Verdugo Rubio"

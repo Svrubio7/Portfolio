@@ -41,7 +41,7 @@ export default function TradingFloor() {
       <StockTicker variant="terminal" />
 
       {/* Hero */}
-      <div className="relative max-w-[1400px] mx-auto px-6 pt-12 pb-8">
+      <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 pt-8 sm:pt-12 pb-6 sm:pb-8">
         <motion.p
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
@@ -151,7 +151,7 @@ export default function TradingFloor() {
       </div>
 
       {/* Cards grid */}
-      <div className="relative max-w-[1400px] mx-auto px-6 pb-20">
+      <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 pb-16 sm:pb-20">
         <motion.div
           layout
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5"

@@ -27,12 +27,12 @@ export default function Masthead() {
   return (
     <header className="relative w-full pt-6 pb-3 paper-grain">
       {/* Top thin info strip */}
-      <div className="mx-auto max-w-[1200px] px-6 flex justify-between items-center text-[11px] smcp text-ink-soft pb-3 border-b border-ink/30">
-        <span>EST. 2026 · MADRID · MÁLAGA · TARIFA</span>
-        <span className="hidden md:inline">
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6 flex justify-between items-center gap-2 text-[10px] sm:text-[11px] smcp text-ink-soft pb-3 border-b border-ink/30">
+        <span className="truncate">EST. 2026 · MADRID</span>
+        <span className="hidden md:inline whitespace-nowrap">
           “All the code that&apos;s fit to print.”
         </span>
-        <span>WEATHER · CLEAR · 22°C</span>
+        <span className="truncate text-right">CLEAR · 22°C</span>
       </div>
 
       {/* Big masthead title */}
@@ -54,15 +54,15 @@ export default function Masthead() {
       </motion.div>
 
       {/* Vol / Issue / Date strip */}
-      <div className="mx-auto max-w-[1200px] px-6 mt-3 pt-3 pb-3 double-rule flex flex-wrap justify-between items-center text-[11px] smcp text-ink-soft gap-2">
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6 mt-3 pt-3 pb-3 double-rule flex flex-wrap justify-between items-center text-[10px] sm:text-[11px] smcp text-ink-soft gap-2">
         <span>VOL. I — N.º 0001</span>
         <span
           suppressHydrationWarning
-          className="font-mono normal-case tracking-normal text-[11px]"
+          className="font-mono normal-case tracking-normal text-[10px] sm:text-[11px]"
         >
           {today}
         </span>
-        <span>FREE — ONLINE EDITION</span>
+        <span className="hidden sm:inline">FREE — ONLINE EDITION</span>
       </div>
     </header>
   );

@@ -89,16 +89,24 @@
   line-height: 0.95;
 }
 
-/* Italic glyphs in Crimson Pro / Playfair lean rightward and visually crash
-   into the next word. Give inline emphasis tags a tiny breathing buffer
-   so "the loop matters" reads correctly on every screen. */
+/* Italic / bold glyphs in serif fonts can visually crash into the next word.
+   Tiny breathing buffer for inline emphasis tags. */
 em,
 i,
 cite {
   padding-right: 0.12em;
 }
-strong + * {
-  /* no-op; kept here so the rule above doesn't accidentally cascade */
+strong,
+b {
+  padding-right: 0.05em;
+}
+
+/* Mobile-tuned typography */
+@media (max-width: 640px) {
+  .dropcap::first-letter {
+    font-size: 4rem;
+    padding-right: 0.5rem;
+  }
 }
 
 .smcp {

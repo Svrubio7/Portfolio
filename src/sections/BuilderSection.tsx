@@ -67,7 +67,7 @@ export default function BuilderSection() {
         }}
       />
 
-      <div className="relative max-w-[1400px] mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+      <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 py-14 md:py-24 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
         {/* Left — copy */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -148,12 +148,12 @@ export default function BuilderSection() {
           transition={{ duration: 0.9, delay: 0.15 }}
           className="md:col-span-5"
         >
-          <div className="relative aspect-[3/4] max-w-md mx-auto">
+          <div className="relative aspect-square sm:aspect-[3/4] max-w-[14rem] sm:max-w-md mx-auto">
             <Image
               src="/characters/coder.png"
               alt="Sergio at the terminal"
               fill
-              sizes="(max-width: 768px) 80vw, 460px"
+              sizes="(max-width: 640px) 60vw, (max-width: 768px) 80vw, 460px"
               className="object-contain drop-shadow-[0_30px_50px_rgba(0,255,135,0.15)]"
             />
           </div>
@@ -194,7 +194,7 @@ export default function BuilderSection() {
         transition={{ duration: 0.8 }}
         className="relative border-t border-trade-grid"
       >
-        <div className="max-w-[1100px] mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 py-8 md:py-10 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
           {[
             { k: "BIAS", v: "Ship something tiny. Use it. Iterate." },
             { k: "ENERGY", v: "Restless. The next idea is already loading." },

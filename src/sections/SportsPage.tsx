@@ -10,7 +10,7 @@ export default function SportsPage() {
     <section className="relative min-h-screen paper-texture">
       <PageHeader page="§2" section="SPORTS & LIFESTYLE" pageNumber={3} />
 
-      <article className="mx-auto max-w-[1200px] px-6 pb-10 grid grid-cols-1 md:grid-cols-12 gap-8">
+      <article className="mx-auto max-w-[1200px] px-4 sm:px-6 pb-10 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
         <div className="col-span-12 flex justify-between items-end">
           <p className="smcp text-[11px] text-tribune-red font-bold">
             §2 · SPORTS &amp; LIFESTYLE
