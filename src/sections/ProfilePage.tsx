@@ -260,10 +260,7 @@ export default function ProfilePage() {
                 <p className="font-display font-black text-ink uppercase text-[14px]">
                   AVAILABLE FROM
                 </p>
-                <p>
-                  June 2026, on graduation. Earlier for the right
-                  internship.
-                </p>
+                <p>Available from June 2026.</p>
               </div>
               <div className="border-b border-ink/30 pb-3">
                 <p className="font-display font-black text-ink uppercase text-[14px]">
