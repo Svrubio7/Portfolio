@@ -52,21 +52,18 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Wall Estrit Journal — Sergio Verdugo Rubio",
-  description:
-    "ML Engineer · IE University · Building Brainy Buddy, FinanceHub, and SocialMedia AI. A portfolio, in newspaper form.",
+  title: "Sergio Verdugo Portfolio",
+  description: "Sergio Verdugo Portfolio Site",
   openGraph: {
-    title: "Wall Estrit Journal — Sergio Verdugo Rubio",
-    description:
-      "A portfolio in newspaper form. ML engineer, restless builder. 10 projects traded as stocks.",
+    title: "Sergio Verdugo Portfolio",
+    description: "Sergio Verdugo Portfolio Site",
     type: "website",
-    siteName: "Wall Estrit Journal",
+    siteName: "Sergio Verdugo Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wall Estrit Journal — Sergio Verdugo Rubio",
-    description:
-      "A portfolio in newspaper form. ML engineer, restless builder. 10 projects traded as stocks.",
+    title: "Sergio Verdugo Portfolio",
+    description: "Sergio Verdugo Portfolio Site",
   },
 };
 
