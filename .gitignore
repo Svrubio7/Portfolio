@@ -46,3 +46,5 @@ next-env.d.ts
 # stash
 /_portfolio_stash
 /portfolio-tmp
+
+.vercel
