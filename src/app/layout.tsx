@@ -52,18 +52,20 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sergioverdugo.me"),
   title: "Sergio Verdugo Portfolio",
-  description: "Sergio Verdugo Portfolio Site",
+  description: "Check out Sergio Verdugo's Portfolio site",
   openGraph: {
     title: "Sergio Verdugo Portfolio",
-    description: "Sergio Verdugo Portfolio Site",
+    description: "Check out Sergio Verdugo's Portfolio site",
     type: "website",
     siteName: "Sergio Verdugo Portfolio",
+    url: "https://sergioverdugo.me",
   },
   twitter: {
     card: "summary_large_image",
     title: "Sergio Verdugo Portfolio",
-    description: "Sergio Verdugo Portfolio Site",
+    description: "Check out Sergio Verdugo's Portfolio site",
   },
 };
 
