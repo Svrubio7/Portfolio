@@ -101,11 +101,18 @@ b {
   padding-right: 0.05em;
 }
 
-/* Mobile-tuned typography */
+/* Mobile-tuned typography — drop cap is far too dominant on small screens */
 @media (max-width: 640px) {
   .dropcap::first-letter {
-    font-size: 4rem;
-    padding-right: 0.5rem;
+    font-size: 3rem;
+    padding-right: 0.4rem;
+  }
+
+  /* On the article body's "col-rule" container, the tall borders look weird
+     on a single-column phone layout — collapse them to simple top borders. */
+  .col-rule > * + * {
+    border-left: 0;
+    padding-left: 0;
   }
 }
 

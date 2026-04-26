@@ -9,7 +9,7 @@ export default function ProfilePage() {
     <section className="relative min-h-screen paper-texture">
       <PageHeader page="§3" section="PROFILE & CLASSIFIEDS" pageNumber={4} />
 
-      <article className="mx-auto max-w-[1200px] px-4 sm:px-6 pb-10 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
+      <article className="mx-auto max-w-[1200px] px-4 sm:px-6 pb-10 flex flex-col gap-6 md:grid md:grid-cols-12 md:gap-8">
         <div className="col-span-12 flex justify-between items-end">
           <p className="smcp text-[11px] text-tribune-red font-bold">
             §3 · PROFILE
@@ -150,7 +150,7 @@ export default function ProfilePage() {
             </p>
             <dl className="font-mono text-[12px] text-ink space-y-2 leading-relaxed">
               {[
-                ["AGE", "22"],
+                ["AGE", "21"],
                 ["BASED", "Madrid · Málaga · Tarifa"],
                 ["DEGREE", "BSc CS + AI · IE University · 2026"],
                 ["GPA", "8.2 / 10.0 · IE High Potential Award"],
@@ -160,12 +160,12 @@ export default function ProfilePage() {
               ].map(([k, v]) => (
                 <div
                   key={k}
-                  className="grid grid-cols-3 gap-2 border-b border-ink/15 pb-2"
+                  className="flex flex-col sm:flex-row sm:gap-3 border-b border-ink/15 pb-2"
                 >
-                  <dt className="col-span-1 font-bold smcp text-[11px] tracking-wide">
+                  <dt className="font-bold smcp text-[11px] tracking-wide sm:w-20 shrink-0 mb-1 sm:mb-0">
                     {k}
                   </dt>
-                  <dd className="col-span-2 text-ink-soft">{v}</dd>
+                  <dd className="text-ink-soft flex-1">{v}</dd>
                 </div>
               ))}
             </dl>

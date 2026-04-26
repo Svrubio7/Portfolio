@@ -10,7 +10,7 @@ export default function SportsPage() {
     <section className="relative min-h-screen paper-texture">
       <PageHeader page="§2" section="SPORTS & LIFESTYLE" pageNumber={3} />
 
-      <article className="mx-auto max-w-[1200px] px-4 sm:px-6 pb-10 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
+      <article className="mx-auto max-w-[1200px] px-4 sm:px-6 pb-10 flex flex-col gap-6 md:grid md:grid-cols-12 md:gap-8">
         <div className="col-span-12 flex justify-between items-end">
           <p className="smcp text-[11px] text-tribune-red font-bold">
             §2 · SPORTS &amp; LIFESTYLE
@@ -200,13 +200,13 @@ export default function SportsPage() {
               ].map(([k, v]) => (
                 <div
                   key={k}
-                  className="grid grid-cols-3 gap-2 border-b border-ink/15 pb-2"
+                  className="flex flex-col sm:flex-row sm:gap-3 border-b border-ink/15 pb-2"
                 >
-                  <dt className="col-span-1 font-bold smcp text-[11px] tracking-wide">
+                  <dt className="font-bold smcp text-[11px] tracking-wide sm:w-24 shrink-0 mb-1 sm:mb-0">
                     {k}
                   </dt>
                   <dd
-                    className="col-span-2 text-ink-soft"
+                    className="text-ink-soft flex-1"
                     dangerouslySetInnerHTML={{ __html: v }}
                   />
                 </div>
