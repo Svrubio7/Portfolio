@@ -110,13 +110,13 @@ export default function NewspaperIntro() {
                 className="font-display font-black text-ink text-center mt-2.5 leading-[1.0]"
                 style={{ fontSize: "clamp(0.85rem, 3.4vw, 1.6rem)" }}
               >
-                Verdugo Opens
+                Verdugo Bets
                 <br />
-                Portfolio To Public
+                The Book On Quetzal
               </h2>
 
               <p className="font-headline italic text-ink-soft text-center mt-1 text-[9px] md:text-[10.5px] leading-snug px-1">
-                Diversified holdings unveiled — markets respond favourably
+                Founder goes all-in on AI autopilot. Markets respond favourably
               </p>
 
               <div className="mt-2 flex-1 bg-paper-deep border border-ink/40 relative overflow-hidden">
@@ -136,7 +136,7 @@ export default function NewspaperIntro() {
               </div>
 
               <p className="font-mono text-[8px] text-ink-soft text-center mt-2 tracking-wide">
-                $SVR · ▲ 8.42% · 10 HOLDINGS · INSIDE: §1 §2 §3 §4
+                $SVR · ▲ 13.2% · LEADER $QTZL · INSIDE: §1 §2 §3 §4
               </p>
             </div>
 

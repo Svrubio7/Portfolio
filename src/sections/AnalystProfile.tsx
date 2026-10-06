@@ -68,10 +68,10 @@ export default function AnalystProfile() {
             Hi, I&apos;m Sergio.
           </h2>
           <p className="font-headline italic text-ink-soft text-xl md:text-2xl mt-3 leading-snug">
-            21-year-old ML engineer, finishing my CS + AI degree at IE
-            University. I&apos;m a restless builder — I love creating new
-            products. I trust the things I build with my own money. I keep the
-            losses on the books.
+            22-year-old AI engineer at Vidalytics and co-founder of Quetzal.
+            CS + AI graduate of IE University (July 2026). I&apos;m a restless
+            builder: I love creating new products, I trust the things I build
+            with my own money, and I keep the losses on the books.
           </p>
 
           <div className="mt-8 font-body text-[16px] text-ink leading-[1.7] space-y-4">
@@ -90,12 +90,21 @@ export default function AnalystProfile() {
               issue affecting <strong>75%</strong> of incoming data.
             </p>
             <p>
-              Today I run <strong>Brainy Buddy</strong>, an AI study planner
-              live at brainy-buddy.com, with an EU-compliant LTI extension
-              shipping into European universities. On the side, I&apos;m
-              building <strong>SocialMedia AI</strong>, a video
-              pattern-analysis SaaS, and <strong>FinanceHub</strong>, a
-              personal market-analysis cockpit I trust with my own portfolio.
+              Today I work as an <strong>AI Engineer at Vidalytics</strong>,
+              where I&apos;m learning more per week than I did in most
+              semesters. Outside work, I co-founded{" "}
+              <strong>Quetzal</strong> (quetzaltech.es), an AI social media
+              autopilot for small businesses. I&apos;m the engineer and
+              architect behind it, from the video pipeline to the
+              self-improving engine.
+            </p>
+            <p>
+              I also take on client work: websites, internal tools and AI
+              automations for companies like <strong>Chaparral Golf
+              Club</strong>, <strong>Palacete 10</strong> and{" "}
+              <strong>VAMOZ Marbella</strong>. And I still trade from{" "}
+              <strong>FinanceHub</strong>, the market-analysis cockpit I trust
+              with my own portfolio.
             </p>
             <p>
               Most days I&apos;m in front of a terminal. The good ones, I&apos;m
@@ -106,9 +115,9 @@ export default function AnalystProfile() {
           {/* Facts grid */}
           <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-3">
             {[
-              { k: "DEGREE", v: "BSc CS + AI · IE University" },
-              { k: "GRADUATES", v: "May 2026" },
-              { k: "GPA", v: "8.2 / 10.0" },
+              { k: "NOW", v: "AI Engineer · Vidalytics" },
+              { k: "FOUNDER", v: "Quetzal · quetzaltech.es" },
+              { k: "DEGREE", v: "BSc CS + AI · IE · Jul 2026" },
               { k: "LANGUAGES", v: "ES · EN · DE · FR" },
               { k: "STACK", v: "Python · TS · C++ · SQL · AWS · PySpark" },
               { k: "BASED", v: "Madrid 🇪🇸" },

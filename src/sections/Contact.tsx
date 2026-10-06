@@ -55,8 +55,9 @@ export default function Contact() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="font-headline italic text-trade-muted text-xl md:text-2xl mt-4 max-w-[55ch] leading-snug"
         >
-          Recruiter, founder, fellow engineer, or just curious — every position
-          on the Verdugo Index is open to a chat.
+          I&apos;m not looking for new roles or projects right now, but if
+          you&apos;re a founder, a fellow engineer, or just curious about
+          anything on the Verdugo Index, I&apos;m always up for a chat.
         </motion.p>
 
         {/* Contact grid */}

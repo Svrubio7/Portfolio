@@ -31,7 +31,7 @@ export default function BusinessPage() {
           className="col-span-12 font-display font-black text-ink headline-leading"
           style={{ fontSize: "clamp(2rem, 5.5vw, 5rem)" }}
         >
-          Mixed Signals Across the Verdugo Book.
+          Quetzal Leads the Verdugo Book Higher.
         </motion.h2>
 
         {/* Deck */}
@@ -42,9 +42,9 @@ export default function BusinessPage() {
           transition={{ duration: 0.9, delay: 0.2 }}
           className="col-span-12 font-headline italic text-ink-soft text-lg md:text-xl leading-snug border-t-2 border-b-2 border-ink py-3"
         >
-          Study tech and short-term rentals lead the index higher; government
-          efficiency tracker delisted under cost pressure. Two assets quietly removed
-          from the board.
+          Founder position surges on a six-network autopilot; SocialMedia AI absorbed
+          into the flagship; client desk fills orders across the Costa del Sol. Four
+          delisted assets stay on the board out of principle.
         </motion.p>
 
         {/* Byline */}
@@ -81,60 +81,80 @@ export default function BusinessPage() {
           {/* Body */}
           <div className="font-body text-[17px] leading-[1.55] text-ink space-y-4 col-rule">
             <p className="dropcap">
-              The <strong>Verdugo Index ($SVR)</strong> closed up <strong>8.42%</strong>{" "}
-              on the day, propelled by gains in study tech and short-term rentals
-              while two former darlings — <strong>$DEGU</strong> and{" "}
-              <strong>$ETERNAL</strong> — were quietly removed from the board.
+              The <strong>Verdugo Index ($SVR)</strong> closed up <strong>13.2%</strong>{" "}
+              on the day, carried almost entirely by its founder position.{" "}
+              <strong>Quetzal ($QTZL, +41.2%)</strong>, an AI social media autopilot
+              for small businesses, now carries the largest weight on the book.
             </p>
 
             <h3 className="font-display font-black text-ink text-xl pt-2 smcp">
-              Top Movers
+              The Flagship
             </h3>
             <p>
-              Leading the rally was <strong>Brainy Buddy ($BRAINY, +24.6%)</strong>,
-              an AI-powered study planner now live at{" "}
-              <a
-                href="https://brainy-buddy.com"
-                className="underline decoration-tribune-red decoration-2 underline-offset-2 hover:bg-tribune-red hover:text-paper transition"
-              >
-                brainy-buddy.com
+              Quetzal connects to a business&apos;s Instagram, Facebook, LinkedIn,
+              TikTok, X and YouTube, learns the brand once, and then runs the whole
+              loop: trend research, platform-native copy, images, carousels and reels,
+              safety checks, scheduling, publishing, and learning from the results.
+              It is live at{" "}
+              <a href="https://www.quetzaltech.es" target="_blank" rel="noopener noreferrer" className="underline decoration-tribune-red decoration-2 underline-offset-2 hover:bg-tribune-red hover:text-paper transition">
+                quetzaltech.es
               </a>
-              . Built from prototype to production, the platform combines a
-              deterministic 15-minute slot scheduler with an LLM tool-calling assistant
-              — a structure analysts have privately described as &ldquo;rare for a
-              one-engineer shop.&rdquo;
+              .
             </p>
             <p>
-              Verdugo recently shipped an LTI 1.3 multi-tenant extension targeting
-              European universities, making the system fully GDPR and AI-Act
-              compliant; <em>student names, notably, never enter the language model
-              prompt.</em>
+              Verdugo, who co-founded the company and is its engineer and architect,
+              built the reels pipeline so that a reasoning model plans an edit decision
+              list and Remotion renders it, with <em>no model ever touching the pixels
+              directly</em>. The engine improves through contextual bandits trained only
+              on each account&apos;s own consented metrics, and the system is designed
+              to fail closed. Analysts called the commit history, more than 2,500
+              entries since June, &ldquo;frankly alarming.&rdquo;
             </p>
+
+            <h3 className="font-display font-black text-ink text-xl pt-2 smcp">
+              Mergers &amp; Acquisitions
+            </h3>
             <p>
-              <strong>Casa del Sol Holidays ($CASA, +18.4%)</strong>, a Django + Vue
-              short-term rental platform serving real customers at{" "}
-              <a
-                href="https://casadelsolholidays.es"
-                className="underline decoration-tribune-red decoration-2 underline-offset-2 hover:bg-tribune-red hover:text-paper transition"
-              >
+              <strong>SocialMedia AI ($SOCIAL)</strong>, the video pattern-analysis SaaS
+              once described as &ldquo;one of my biggest projects,&rdquo; has been folded
+              into $QTZL. Its research into what makes a video perform became the
+              starting point for Quetzal.
+            </p>
+
+            <h3 className="font-display font-black text-ink text-xl pt-2 smcp">
+              The OTC Desk
+            </h3>
+            <p>
+              Away from the exchange, Verdugo has been filling client orders: a
+              five-language site and admin for <strong>Chaparral Golf Club</strong>, a
+              corporate-housing site for the heritage villa <strong>Palacete 10</strong>,
+              an AI blog studio that researches and drafts articles for{" "}
+              <strong>VAMOZ Marbella</strong>, and a rebuild that made{" "}
+              <strong>La Montada</strong>&apos;s homepage twelve times lighter.
+            </p>
+
+            <h3 className="font-display font-black text-ink text-xl pt-2 smcp">
+              Steady Earner
+            </h3>
+            <p>
+              <strong>Casa del Sol Holidays ($CASA)</strong>, a Django + Vue rental
+              platform serving real customers at{" "}
+              <a href="https://casadelsolholidays.es" className="underline decoration-tribune-red decoration-2 underline-offset-2 hover:bg-tribune-red hover:text-paper transition">
                 casadelsolholidays.es
               </a>
-              , contributed steadily. &ldquo;Boring revenue,&rdquo; Verdugo is reported
-              to have said, &ldquo;is the best kind.&rdquo;
+              , held its ground. &ldquo;Boring revenue,&rdquo; Verdugo is reported to
+              have said, &ldquo;is the best kind.&rdquo;
             </p>
 
             <h3 className="font-display font-black text-ink text-xl pt-2 smcp">
               Dev-Phase Watch
             </h3>
             <p>
-              Two positions remain under construction. <strong>SocialMedia AI
-              ($SOCIAL, +12.7%)</strong> — a SaaS for video pattern analysis, automated
-              editing, and multi-platform publishing — is the most ambitious unfinished
-              asset on the book. Verdugo describes it as &ldquo;one of my biggest
-              projects, currently aging like a fine wine.&rdquo;{" "}
-              <strong>FinanceHub ($FINHUB, +7.8%)</strong>, his personal
-              market-analysis cockpit, is the tool he trades from when he isn&apos;t
-              building portfolios for other people.
+              <strong>Jarvis 2.0 ($JARVIS, +9.6%)</strong>, a voice-first personal agent
+              that does real work on your computer and phones you when it needs a
+              decision, is in late development with roughly 3,350 automated tests.{" "}
+              <strong>FinanceHub ($FINHUB)</strong>, his personal market-analysis
+              cockpit, remains the tool he trades from.
             </p>
 
             <h3 className="font-display font-black text-ink text-xl pt-2 smcp">
@@ -158,12 +178,15 @@ export default function BusinessPage() {
               It was the predecessor of ProScout.
             </p>
             <p>
+              Two more positions left the board this year, both still kept on the
+              books: <strong>Brainy Buddy ($BRAINY)</strong>, an AI study
+              planner he took from zero to production, and <strong>Alcanza
+              ($ALCNZ)</strong>, a scholarship matcher for Spanish students. They join{" "}
               <strong>$DEGU</strong>, a government corruption tracker that drew real
-              traffic, was delisted when hosting bills became unsustainable.{" "}
-              <strong>$ETERNAL</strong>, a privacy-first memory vault with
-              zero-knowledge encryption, was paused for the same reason. Verdugo
-              refuses to delete them. <em>&ldquo;The losses are part of the track
-              record,&rdquo;</em> he said.
+              traffic before hosting bills became unsustainable, and{" "}
+              <strong>$ETERNAL</strong>, a privacy-first memory vault paused for the same
+              reason. Verdugo refuses to delete any of them. <em>&ldquo;The losses are
+              part of the track record,&rdquo;</em> he said.
             </p>
           </div>
         </motion.div>
@@ -184,7 +207,7 @@ export default function BusinessPage() {
               &ldquo;The losses are part of the track record. I refuse to delete them.&rdquo;
             </p>
             <footer className="smcp text-[11px] text-ink-soft mt-2">
-              — VERDUGO, ON KEEPING $DEGU AND $ETERNAL ON THE BOARD
+              — VERDUGO, ON KEEPING HIS DELISTED POSITIONS ON THE BOARD
             </footer>
           </blockquote>
 
@@ -195,10 +218,11 @@ export default function BusinessPage() {
             </p>
             <div className="space-y-2 font-mono text-[12px] text-ink">
               {[
-                { name: "TECH SAAS", weight: 35, color: "bg-emerald-700" },
-                { name: "PERSONAL TOOLS", weight: 20, color: "bg-blue-700" },
-                { name: "ACADEMIC ML", weight: 25, color: "bg-amber-700" },
-                { name: "DELISTED LEGACY", weight: 20, color: "bg-rose-800" },
+                { name: "FLAGSHIP · $QTZL", weight: 40, color: "bg-emerald-800" },
+                { name: "TECH SAAS", weight: 20, color: "bg-emerald-600" },
+                { name: "PERSONAL TOOLS", weight: 12, color: "bg-blue-700" },
+                { name: "ACADEMIC ML", weight: 16, color: "bg-amber-700" },
+                { name: "DELISTED LEGACY", weight: 12, color: "bg-rose-800" },
               ].map((s) => (
                 <div key={s.name} className="space-y-1">
                   <div className="flex justify-between">

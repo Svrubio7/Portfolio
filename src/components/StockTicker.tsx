@@ -30,6 +30,7 @@ export default function StockTicker({ variant = "paper" }: { variant?: Variant }
             if (p.trend === "rising" || p.trend === "dev") return isTerminal ? "text-trade-up" : "text-emerald-300";
             if (p.trend === "stable") return isTerminal ? "text-trade-amber" : "text-amber-200";
             if (p.trend === "underperform") return isTerminal ? "text-trade-down" : "text-rose-300";
+            if (p.trend === "acquired") return isTerminal ? "text-trade-acquired" : "text-indigo-200";
             return "text-ink-faded";
           })();
           const arrow = p.changePct > 0 ? "▲" : p.changePct < 0 ? "▼" : "▬";
@@ -38,9 +39,13 @@ export default function StockTicker({ variant = "paper" }: { variant?: Variant }
             <span key={`${p.ticker}-${i}`} className="px-6 inline-flex items-center gap-2">
               <span className={cn("font-bold", trendColor)}>${p.ticker}</span>
               <span className="opacity-90">
-                {p.trend === "delisted" ? "DELISTED" : p.price.toFixed(2)}
+                {p.trend === "delisted"
+                  ? "DELISTED"
+                  : p.trend === "acquired"
+                  ? "MERGED → $QTZL"
+                  : p.price.toFixed(2)}
               </span>
-              {p.trend !== "delisted" && (
+              {p.trend !== "delisted" && p.trend !== "acquired" && (
                 <span className={cn(trendColor)}>
                   {arrow} {sign}
                   {p.changePct.toFixed(2)}%

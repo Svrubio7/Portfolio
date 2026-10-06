@@ -2,9 +2,10 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { projects, indexQuotes, type Project } from "@/data/projects";
+import { projects, indexQuotes, breadth, type Project } from "@/data/projects";
 import StockTicker from "@/components/StockTicker";
 import StockCard from "@/components/StockCard";
+import FlagshipCard from "@/components/FlagshipCard";
 import { cn } from "@/lib/cn";
 
 const SECTORS = [
@@ -20,10 +21,10 @@ type SectorId = (typeof SECTORS)[number]["id"];
 export default function TradingFloor() {
   const [sector, setSector] = useState<SectorId>("ALL");
 
-  const filtered: Project[] =
-    sector === "ALL"
-      ? projects
-      : projects.filter((p) => p.sector === sector);
+  const inSector = (p: Project) => sector === "ALL" || p.sector === sector;
+  const filtered: Project[] = projects.filter((p) => !p.flagship && inSector(p));
+  const showFlagship = projects.some((p) => p.flagship && inSector(p));
+  const b = breadth();
 
   return (
     <section className="relative min-h-screen bg-trade-bg text-trade-text">
@@ -68,10 +69,11 @@ export default function TradingFloor() {
               <span className="text-trade-up">$SVR</span> Holdings
             </h1>
             <p className="font-body text-trade-muted text-lg mt-3 max-w-[48ch]">
-              Every ticker below is a <strong className="text-trade-text">project I&apos;ve built</strong> —
-              some live and growing, some shipped clean, some I had to delist
-              when the hosting bills came due. Click any ticker to read the
-              full case study.
+              Every ticker below is a <strong className="text-trade-text">project I&apos;ve built</strong>.
+              The biggest position is <strong className="text-trade-up">$QTZL</strong>, the
+              startup I co-founded. The rest are live and growing, shipped clean,
+              merged into something bigger, or delisted when the hosting bills
+              came due. Click any ticker to read the full case study.
             </p>
           </motion.div>
 
@@ -87,7 +89,7 @@ export default function TradingFloor() {
                   $SVR · INDEX
                 </p>
                 <p className="text-trade-muted font-mono text-[10px]">
-                  10 HOLDINGS
+                  {b.total} HOLDINGS
                 </p>
               </div>
               <div className="flex items-baseline gap-3 mt-2">
@@ -113,7 +115,8 @@ export default function TradingFloor() {
                 </div>
               </div>
               <p className="font-mono text-[10px] text-trade-muted mt-3 pt-3 border-t border-trade-grid">
-                BREADTH — 6 ADVANCING / 1 UNDERPERFORM / 2 DELISTED / 1 STABLE
+                BREADTH — {b.advancing} ADVANCING / {b.stable} STABLE / {b.underperform} UNDERPERFORM
+                / {b.acquired} MERGED / {b.delisted} DELISTED
               </p>
             </div>
           </motion.div>
@@ -152,6 +155,8 @@ export default function TradingFloor() {
 
       {/* Cards grid */}
       <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 pb-16 sm:pb-20">
+        {showFlagship && <FlagshipCard />}
+
         <motion.div
           layout
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5"
@@ -164,7 +169,7 @@ export default function TradingFloor() {
         {/* Footer scroll-down hint */}
         <div className="mt-20 text-center">
           <p className="font-mono text-[11px] text-trade-muted tracking-[0.2em]">
-            ↓ SECTOR ROTATION · SPORTS DESK COMING UP ↓
+            ↓ NEXT · THE OTC DESK: CLIENT MANDATES ↓
           </p>
         </div>
       </div>

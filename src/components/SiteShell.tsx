@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ReactNode, useEffect, useState } from "react";
 import NewspaperBook from "@/components/NewspaperBook";
 import TradingFloor from "@/sections/TradingFloor";
+import ClientDesk from "@/sections/ClientDesk";
 import BuilderSection from "@/sections/BuilderSection";
 import SportsDesk from "@/sections/SportsDesk";
 import AnalystProfile from "@/sections/AnalystProfile";
@@ -62,6 +63,7 @@ export default function SiteShell({
           animate={{ opacity: 1, transition: { duration: 0.8, delay: 0.1 } }}
         >
           <TradingFloor />
+          <ClientDesk />
           <BuilderSection />
           <SportsDesk />
           <AnalystProfile />

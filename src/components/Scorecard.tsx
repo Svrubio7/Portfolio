@@ -9,6 +9,7 @@ const trendLabel: Record<string, string> = {
   dev: "◆",
   stable: "▬",
   underperform: "▼",
+  acquired: "⇢",
   delisted: "✕",
 };
 
@@ -17,6 +18,7 @@ const trendColor: Record<string, string> = {
   dev: "text-blue-700",
   stable: "text-amber-700",
   underperform: "text-rose-700",
+  acquired: "text-indigo-700",
   delisted: "text-ink-faded line-through",
 };
 
@@ -56,11 +58,13 @@ export default function Scorecard() {
                 ${p.ticker}
               </td>
               <td className={cn("text-right py-1", trendColor[p.trend])}>
-                {p.trend === "delisted" ? "—" : p.price.toFixed(2)}
+                {p.trend === "delisted" || p.trend === "acquired" ? "—" : p.price.toFixed(2)}
               </td>
               <td className={cn("text-right py-1", trendColor[p.trend])}>
                 {p.trend === "delisted"
                   ? "DLST"
+                  : p.trend === "acquired"
+                  ? "MRGD"
                   : `${p.changePct > 0 ? "+" : ""}${p.changePct.toFixed(1)}%`}
               </td>
               <td className={cn("text-center py-1", trendColor[p.trend])}>
@@ -71,7 +75,7 @@ export default function Scorecard() {
         </tbody>
       </table>
       <p className="font-mono text-[10px] text-ink-soft mt-3 italic">
-        ▲ rising · ◆ dev · ▬ stable · ▼ underperform · ✕ delisted
+        ▲ rising · ◆ dev · ▬ stable · ▼ underperform · ⇢ merged · ✕ delisted
       </p>
     </motion.div>
   );

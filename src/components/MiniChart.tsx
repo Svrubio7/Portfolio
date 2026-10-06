@@ -34,6 +34,8 @@ function generatePath(ticker: string, trend: StockTrend, width: number, height: 
         return 0.5;
       case "underperform":
         return 0.4; // start high, decline
+      case "acquired":
+        return 0.8; // climbed, then folded into another holding
       case "delisted":
         return 0.5;
     }
@@ -49,6 +51,8 @@ function generatePath(ticker: string, trend: StockTrend, width: number, height: 
         return 0.5;
       case "underperform":
         return 0.85;
+      case "acquired":
+        return 0.3;
       case "delisted":
         return 0.95; // collapse
     }
@@ -94,7 +98,9 @@ export default function MiniChart({ trend, ticker, width = 240, height = 80 }: P
         ? "var(--color-trade-amber)"
         : trend === "underperform"
           ? "var(--color-trade-down)"
-          : "#5a5a5a";
+          : trend === "acquired"
+            ? "var(--color-trade-acquired)"
+            : "#5a5a5a";
 
   const fillGradientId = `mc-grad-${ticker}`;
 
@@ -180,6 +186,25 @@ export default function MiniChart({ trend, ticker, width = 240, height = 80 }: P
           transition={{ delay: 1.0, duration: 0.5 }}
         >
           DELISTED
+        </motion.text>
+      )}
+
+      {trend === "acquired" && (
+        <motion.text
+          x={width / 2}
+          y={height / 2 + 5}
+          textAnchor="middle"
+          fill="var(--color-trade-acquired)"
+          fontFamily="var(--font-mono)"
+          fontSize="11"
+          fontWeight="700"
+          letterSpacing="2"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 1.0, duration: 0.5 }}
+        >
+          MERGED → $QTZL
         </motion.text>
       )}
     </svg>

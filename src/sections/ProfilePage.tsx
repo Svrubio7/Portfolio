@@ -38,8 +38,8 @@ export default function ProfilePage() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="col-span-12 font-headline italic text-ink-soft text-lg md:text-xl leading-snug border-t-2 border-b-2 border-ink py-3"
         >
-          The 21-year-old IE student on building products that ship, raising
-          venture capital at nineteen, catching fraud at scale, and learning
+          The 22-year-old founder and AI engineer on building Quetzal, raising
+          venture capital as a teenager, catching fraud at scale, and learning
           when to delete his own code.
         </motion.p>
 
@@ -76,11 +76,13 @@ export default function ProfilePage() {
             <p className="dropcap">
               SERGIO Verdugo Rubio sits across the table with the precise
               calm of a person who has already calculated three different
-              ways the conversation could go. He is twenty-one, six months
-              from a Bachelor&apos;s in Computer Science and Artificial
-              Intelligence at <strong>IE University Madrid</strong>, and on
-              paper he reads less like a senior student than like a junior
-              fund manager — a restless builder by his own admission.
+              ways the conversation could go. He is twenty-two, an{" "}
+              <strong>AI Engineer at Vidalytics</strong> by day, the
+              co-founder of <strong>Quetzal</strong> the rest of the time, and
+              since July a graduate in Computer Science and Artificial
+              Intelligence from <strong>IE University Madrid</strong>. On
+              paper he reads less like a recent graduate than like a junior
+              fund manager: a restless builder, by his own admission.
             </p>
             <p>
               His résumé tracks the unusual arc of someone who started early
@@ -112,12 +114,19 @@ export default function ProfilePage() {
               made the design,&rdquo; he says.
             </p>
             <p>
-              Today his attention is on <strong>Brainy Buddy</strong>, the
-              AI study planner now live at brainy-buddy.com (with an
-              EU-compliant LTI extension shipping into European universities)
-              and <strong>SocialMedia AI</strong>, the video-pattern SaaS he
-              describes — without much self-deprecation — as &ldquo;one of my
-              biggest projects.&rdquo;
+              Today most of his attention goes to <strong>Quetzal</strong>, the
+              AI social media autopilot he co-founded and engineers. It
+              absorbed his earlier video-pattern project, SocialMedia AI, and
+              now publishes for small businesses across six networks.
+              &ldquo;Information beats effort,&rdquo; he says, quoting the
+              company&apos;s doctrine. &ldquo;Authenticity beats polish.&rdquo;
+            </p>
+            <p>
+              At <strong>Vidalytics</strong>, where he works as an AI Engineer,
+              he says he is &ldquo;learning a ton, every single week.&rdquo; In
+              between, he builds websites and AI automations for clients
+              ranging from a Costa del Sol golf club to a Marbella real-estate
+              agency whose blog now drafts itself.
             </p>
             <p>
               On the wall above his desk is a quiet, paradoxical reminder of
@@ -150,9 +159,10 @@ export default function ProfilePage() {
             </p>
             <dl className="font-mono text-[12px] text-ink space-y-2 leading-relaxed">
               {[
-                ["AGE", "21"],
+                ["AGE", "22"],
+                ["NOW", "AI Engineer @ Vidalytics · Co-founder @ Quetzal"],
                 ["BASED", "Madrid · Málaga · Tarifa"],
-                ["DEGREE", "BSc CS + AI · IE University · 2026"],
+                ["DEGREE", "BSc CS + AI · IE University · Graduated July 2026"],
                 ["GPA", "8.2 / 10.0 · IE High Potential Award"],
                 ["EARLY", "A-Levels: Maths A* / Further Maths A* / Physics A"],
                 ["LANGS", "ES native · EN bilingual · DE basic · FR basic"],
@@ -179,12 +189,45 @@ export default function ProfilePage() {
             <ul className="font-body text-[14px] text-ink space-y-3">
               <li className="flex gap-3">
                 <span className="font-mono text-[11px] text-ink-faded w-14 shrink-0 pt-0.5">
+                  NOW
+                </span>
+                <div>
+                  <p className="font-bold">Vidalytics</p>
+                  <p className="text-ink-soft text-[12.5px] italic">
+                    AI Engineer
+                  </p>
+                </div>
+              </li>
+              <li className="flex gap-3">
+                <span className="font-mono text-[11px] text-ink-faded w-14 shrink-0 pt-0.5">
                   2026
                 </span>
                 <div>
-                  <p className="font-bold">Brainy Buddy</p>
+                  <p className="font-bold">Quetzal</p>
                   <p className="text-ink-soft text-[12.5px] italic">
-                    Founder + Engineer · live at brainy-buddy.com
+                    Co-founder + Engineer · quetzaltech.es
+                  </p>
+                </div>
+              </li>
+              <li className="flex gap-3">
+                <span className="font-mono text-[11px] text-ink-faded w-14 shrink-0 pt-0.5">
+                  2026
+                </span>
+                <div>
+                  <p className="font-bold">Client work</p>
+                  <p className="text-ink-soft text-[12.5px] italic">
+                    Websites + AI automations · Costa del Sol &amp; Madrid
+                  </p>
+                </div>
+              </li>
+              <li className="flex gap-3">
+                <span className="font-mono text-[11px] text-ink-faded w-14 shrink-0 pt-0.5">
+                  2026
+                </span>
+                <div>
+                  <p className="font-bold">IE University</p>
+                  <p className="text-ink-soft text-[12.5px] italic">
+                    BSc CS + AI · graduated July
                   </p>
                 </div>
               </li>
@@ -248,19 +291,21 @@ export default function ProfilePage() {
             <div className="p-4 grid grid-cols-1 gap-3 font-body text-[13px] text-ink leading-snug">
               <div className="border-b border-ink/30 pb-3">
                 <p className="font-display font-black text-ink uppercase text-[14px]">
-                  POSITION SOUGHT
+                  POSITIONS HELD
                 </p>
                 <p>
-                  ML Engineer / Founding Engineer roles considered. Bias
-                  toward small teams, hard problems, and shipping. Ref.
-                  $SVR.
+                  AI Engineer at Vidalytics. Co-founder of Quetzal. Not
+                  selling either position. Ref. $SVR.
                 </p>
               </div>
               <div className="border-b border-ink/30 pb-3">
                 <p className="font-display font-black text-ink uppercase text-[14px]">
-                  AVAILABLE FROM
+                  BOOK CLOSED
                 </p>
-                <p>Available from June 2026.</p>
+                <p>
+                  Not currently available for new roles or projects.
+                  Happy to talk shop, Quetzal or football.
+                </p>
               </div>
               <div className="border-b border-ink/30 pb-3">
                 <p className="font-display font-black text-ink uppercase text-[14px]">
@@ -296,7 +341,7 @@ export default function ProfilePage() {
                   PERSONAL
                 </p>
                 <p className="italic text-ink-soft">
-                  Recruiter? Founder? Just curious? Open the next section
+                  Founder? Fellow engineer? Just curious? Open the next section
                   for the live trading floor — every position on the
                   Verdugo Index, in colour.
                 </p>

@@ -1,4 +1,10 @@
-export type StockTrend = "rising" | "dev" | "stable" | "underperform" | "delisted";
+export type StockTrend =
+  | "rising"
+  | "dev"
+  | "stable"
+  | "underperform"
+  | "acquired"
+  | "delisted";
 
 export type Project = {
   ticker: string;
@@ -21,31 +27,53 @@ export type Project = {
   logo?: string;
   status: string;
   story?: string;
+  /** The flagship holding: rendered as the hero card on the trading floor. */
+  flagship?: boolean;
+  /** Headline numbers shown on the flagship card. */
+  stats?: { label: string; value: string }[];
 };
 
 export const projects: Project[] = [
   {
-    ticker: "BRAINY",
-    name: "Brainy Buddy",
-    oneLiner: "Plan smarter, study calmer.",
+    ticker: "QTZL",
+    name: "Quetzal",
+    oneLiner: "Your social media, on autopilot.",
     description:
-      "AI study planner that ingests syllabi and assignments and auto-syncs a deterministic 15-minute-slot schedule to Google/Apple calendars. Three-system architecture: deterministic planner + trustworthy calendar sync + LLM tool-calling assistant.",
+      "AI-native social media autopilot for small businesses. Connect your accounts and brand once, and Quetzal researches trends, writes platform-native posts, generates images, carousels and reels, runs safety and quality checks, then schedules and publishes across Instagram, Facebook, LinkedIn, TikTok, X and YouTube. It learns from the real results.",
     trend: "rising",
-    price: 248.6,
-    changePct: 24.6,
-    marketCap: "$1.2M ARR potential",
-    volume: "Active daily",
-    peRatio: "∞ (pre-revenue)",
+    price: 412.8,
+    changePct: 41.2,
+    marketCap: "Founder stake",
+    volume: "2,500+ commits",
+    peRatio: "Live · Spain-first",
     sector: "TECH",
-    tech: ["Next.js", "FastAPI", "PostgreSQL", "Redis", "Celery", "LangGraph", "Gemini"],
-    highlight: "Explainable scheduling engine — every slot has a reason.",
-    href: "https://brainy-buddy.com",
-    github: "https://github.com/Svrubio7/brainybuddy",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Supabase",
+      "Inngest",
+      "Remotion",
+      "Gemini",
+      "Contextual bandits",
+      "Stripe",
+      "Hetzner workers",
+    ],
+    highlight:
+      "Two-stage video pipeline: a reasoning model plans an edit decision list, Remotion renders it, and no model ever touches the pixels directly.",
+    href: "https://www.quetzaltech.es",
+    github: "https://github.com/Svrubio7/Quetzal",
     privateRepo: true,
-    logo: "/logos/brainy.png",
+    logo: "/logos/quetzal.png",
     status: "LIVE",
+    flagship: true,
     story:
-      "Shipped from zero to production. Now expanding with an LTI 1.3 multi-tenant extension for European universities — GDPR/AI-Act compliant, EU data residency, student names never enter the LLM prompt.",
+      "My startup. Two founders, and I'm the engineer and architect behind the whole product. Built in public from Spain since June 2026: fail-closed by design, row-level security for every tenant, OAuth tokens kept in a vault, and an approval queue so a person always has the last word.",
+    stats: [
+      { label: "PLATFORMS", value: "6" },
+      { label: "COMMITS SINCE JUNE", value: "2,500+" },
+      { label: "FOUNDED", value: "2026" },
+      { label: "MY ROLE", value: "Co-founder" },
+    ],
   },
   {
     ticker: "CASA",
@@ -72,20 +100,21 @@ export const projects: Project[] = [
     name: "SocialMedia AI",
     oneLiner: "AI that learns what makes your videos work.",
     description:
-      "AI-powered SaaS for video pattern analysis, strategy generation, automated editing, and multi-platform publishing. Analyzes successful video patterns (hooks, pacing, cuts, overlays) and generates platform-optimized variations for Instagram, TikTok, YouTube, Facebook.",
-    trend: "dev",
+      "AI-powered SaaS for video pattern analysis, strategy generation, automated editing, and multi-platform publishing. Analyzed successful video patterns (hooks, pacing, cuts, overlays) and generated platform-optimized variations for Instagram, TikTok, YouTube, Facebook.",
+    trend: "acquired",
     price: 96.4,
-    changePct: 12.7,
-    marketCap: "Pre-launch",
-    volume: "Heavy dev",
+    changePct: 0,
+    marketCap: "Merged into $QTZL",
+    volume: "—",
     peRatio: "—",
     sector: "TECH",
     tech: ["Nuxt.js 3", "FastAPI", "Gemini 1.5 Pro", "GPT-4", "FFmpeg", "Celery", "Supabase"],
     highlight: "End-to-end pipeline: analysis → strategy → script → automated edit → publish.",
     github: "https://github.com/Svrubio7/socialmediaAI",
     privateRepo: false,
-    status: "DEV PHASE",
-    story: "One of my biggest projects — currently in active development.",
+    status: "ACQUIRED",
+    story:
+      "Absorbed by $QTZL. The video-pattern research and publishing pipeline I started here became the starting point for Quetzal.",
   },
   {
     ticker: "FINHUB",
@@ -105,6 +134,28 @@ export const projects: Project[] = [
     github: "https://github.com/Svrubio7/FinanceHub",
     privateRepo: true,
     status: "DEV PHASE",
+  },
+  {
+    ticker: "JARVIS",
+    name: "Jarvis 2.0",
+    oneLiner: "An agent you call, that calls you back.",
+    description:
+      "Voice-first personal AI agent. You talk to it from your iPhone, it does real work on your computer, and it calls you when it needs a decision. A fast model speaks, a stronger model directs it turn by turn, and background agents (a planner, browser and desktop operators, Claude Code or Codex) do the work. Desktop app for Windows, macOS and Linux, plus an iOS app and an end-to-end encrypted relay.",
+    trend: "dev",
+    price: 88.3,
+    changePct: 9.6,
+    marketCap: "Pre-release",
+    volume: "~3,350 tests",
+    peRatio: "—",
+    sector: "PERSONAL",
+    tech: ["Python", "Swift", "Tauri", "LiveKit", "MCP", "OpenAI", "Anthropic"],
+    highlight:
+      "The security model assumes a model can be fooled, and limits what a fooled model can do: permission tiers, approvals, an audit log and screen redaction.",
+    github: "https://github.com/Svrubio7/jarvis-2.0",
+    privateRepo: true,
+    status: "DEV PHASE",
+    story:
+      "All of v2 is merged and covered by tests that fake every paid service. Next up: running it against real models and a real iPhone.",
   },
   {
     ticker: "IBERD",
@@ -181,6 +232,49 @@ export const projects: Project[] = [
     story: "The trade that didn't work — kept on the books because it taught me what ProScout needed to be.",
   },
   {
+    ticker: "BRAINY",
+    name: "Brainy Buddy",
+    oneLiner: "Plan smarter, study calmer.",
+    description:
+      "AI study planner that ingests syllabi and assignments and auto-syncs a deterministic 15-minute-slot schedule to Google/Apple calendars. Three-system architecture: deterministic planner + trustworthy calendar sync + LLM tool-calling assistant.",
+    trend: "delisted",
+    price: 0,
+    changePct: -100,
+    marketCap: "DELISTED",
+    volume: "0",
+    peRatio: "—",
+    sector: "DELISTED",
+    tech: ["Next.js", "FastAPI", "PostgreSQL", "Redis", "Celery", "LangGraph", "Gemini"],
+    highlight: "Explainable scheduling engine — every slot has a reason.",
+    github: "https://github.com/Svrubio7/brainybuddy",
+    privateRepo: true,
+    logo: "/logos/brainy.png",
+    status: "DELISTED",
+    story:
+      "Took it from zero to production, then built an LTI 1.3 multi-tenant extension for European universities: GDPR and AI-Act compliant, EU data residency, and student names never entered the LLM prompt. No longer active, but still on the books.",
+  },
+  {
+    ticker: "ALCNZ",
+    name: "Alcanza",
+    oneLiner: "Every scholarship you're owed, found for you.",
+    description:
+      "Smart aggregator for the 200+ scholarship calls open in Spain at any time. A three-minute conversational profile, an AI matcher that ranks every call by amount and compatibility, and guided preparation of each application. Built for the roughly 35% of eligible students who never apply.",
+    trend: "delisted",
+    price: 0,
+    changePct: -100,
+    marketCap: "DELISTED",
+    volume: "0",
+    peRatio: "—",
+    sector: "DELISTED",
+    tech: ["Next.js", "TypeScript", "Supabase", "Stripe", "LLM matching"],
+    highlight:
+      "Went through three rounds of security hardening: XSS, SSRF, prompt injection, IDOR and race conditions.",
+    github: "https://github.com/Svrubio7/alcanza",
+    status: "DELISTED",
+    story:
+      "Its sibling, Devenga, did the same for public subsidies for Spanish SMEs. Both are no longer active.",
+  },
+  {
     ticker: "DEGU",
     name: "DEGU",
     oneLiner: "Mapping power, exposing abuse.",
@@ -224,10 +318,78 @@ export const projects: Project[] = [
 ];
 
 export const indexQuotes = {
-  current: 1247.83,
-  changePct: 8.42,
-  open: 1150.32,
-  high: 1289.4,
-  low: 1148.2,
-  volume: "10 holdings",
+  current: 1412.56,
+  changePct: 13.2,
+  open: 1247.83,
+  high: 1430.1,
+  low: 1241.05,
 };
+
+export const flagship = projects.find((p) => p.flagship)!;
+
+/** Breadth for the index boxes, computed so it never drifts from the data. */
+export function breadth() {
+  const n = (t: StockTrend[]) => projects.filter((p) => t.includes(p.trend)).length;
+  return {
+    total: projects.length,
+    advancing: n(["rising", "dev"]),
+    stable: n(["stable"]),
+    underperform: n(["underperform"]),
+    acquired: n(["acquired"]),
+    delisted: n(["delisted"]),
+  };
+}
+
+export type ClientMandate = {
+  client: string;
+  where: string;
+  kind: string;
+  what: string;
+  tech: string[];
+};
+
+/** Work done for other companies: websites, internal tools and automations. */
+export const clientWork: ClientMandate[] = [
+  {
+    client: "Chaparral Golf Club",
+    where: "Mijas · Costa del Sol",
+    kind: "WEBSITE + CMS",
+    what: "Full rebuild of the club's site in five languages, with an admin where one edit reaches every language, slope tables with a handicap calculator, and a direct path to tee-time booking.",
+    tech: ["Next.js", "Supabase", "GSAP", "i18n"],
+  },
+  {
+    client: "VAMOZ Marbella",
+    where: "Marbella",
+    kind: "AI AUTOMATION",
+    what: "Internal blog studio: researches a topic with search grounding, writes a Dutch article from the sources, links back to the agency's own pages, generates the images and queues a draft every two days.",
+    tech: ["Next.js", "Gemini", "Supabase", "Scheduled jobs"],
+  },
+  {
+    client: "Palacete 10",
+    where: "Málaga",
+    kind: "WEBSITE + LEADS",
+    what: "Bilingual corporate-housing site for a restored 1908 villa. It was mid-renovation with no photos yet, so the scroll sequence through the villa is generated with fal.ai and Nano Banana Pro.",
+    tech: ["Next.js", "Supabase", "GSAP ScrollTrigger", "fal.ai"],
+  },
+  {
+    client: "La Montada",
+    where: "Spain",
+    kind: "WEBSITE + SEO",
+    what: "Replaced their Framer site with 38 static pages and an admin: a homepage 12× lighter (8.8 MB down to 709 KB), structured data on every page, and photos synced from Google Drive.",
+    tech: ["Next.js", "Supabase", "SEO", "Drive API"],
+  },
+  {
+    client: "Olla GM",
+    where: "Spain",
+    kind: "E-COMMERCE",
+    what: "Official storefront for a manufacturer of programmable cookers: catalogue, card or cash-on-delivery checkout, and warranty information.",
+    tech: ["Next.js", "Vercel"],
+  },
+  {
+    client: "ProPadel Coslada",
+    where: "Madrid",
+    kind: "WEBSITE",
+    what: "Animated website for a padel club.",
+    tech: ["Next.js", "Framer Motion"],
+  },
+];

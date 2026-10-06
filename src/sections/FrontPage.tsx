@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Masthead from "@/components/Masthead";
 import StockTicker from "@/components/StockTicker";
 import { useTodayString } from "@/lib/useToday";
+import { breadth, flagship, indexQuotes } from "@/data/projects";
 
 export default function FrontPage() {
   const todayShort = useTodayString({
@@ -12,6 +13,7 @@ export default function FrontPage() {
     month: "long",
     year: "numeric",
   });
+  const b = breadth();
   return (
     <section className="relative min-h-screen paper-texture">
       <Masthead />
@@ -37,7 +39,7 @@ export default function FrontPage() {
           className="col-span-12 font-display font-black text-ink headline-leading"
           style={{ fontSize: "clamp(2.5rem, 6.5vw, 6rem)" }}
         >
-          Verdugo opens portfolio to public after years of speculation.
+          Verdugo bets the book on Quetzal.
         </motion.h2>
 
         {/* Deck (subhead) */}
@@ -47,9 +49,10 @@ export default function FrontPage() {
           transition={{ duration: 1, delay: 0.5 }}
           className="col-span-12 font-headline italic text-ink-soft text-xl md:text-2xl leading-snug border-t-2 border-b-2 border-ink py-3"
         >
-          ML engineer goes live with diversified holdings — bullish on study tech, bearish
-          on government efficiency. Markets respond favourably; analyst declines comment
-          but “smiles knowingly.”
+          Founder goes all-in on an AI social media autopilot for small businesses,
+          takes an AI engineering seat at Vidalytics, and keeps filling client orders on
+          the side. Markets respond favourably; analyst declines comment but “smiles
+          knowingly.”
         </motion.p>
 
         {/* Byline */}
@@ -86,33 +89,41 @@ export default function FrontPage() {
           {/* Lead body */}
           <div className="font-body text-[17px] leading-[1.55] text-ink space-y-4">
             <p className="dropcap">
-              MADRID — In an unexpected move that has shocked exactly nobody who knows
-              him, 21-year-old machine learning engineer Sergio Verdugo Rubio today opened
-              his project portfolio to public viewing. The site, valued by Verdugo himself
-              at <em>“somewhere between zero and priceless,”</em> was promptly listed on
-              what he calls <strong>The Verdugo Index ($SVR)</strong>.
+              MADRID — In a move that has surprised exactly nobody who knows him,
+              22-year-old engineer Sergio Verdugo Rubio has made{" "}
+              <strong>Quetzal ($QTZL)</strong> the largest position on{" "}
+              <strong>The Verdugo Index ($SVR)</strong>. The startup, which he
+              co-founded and engineers end to end, runs a small business&apos;s social
+              media on autopilot: it researches, writes, makes the images and reels,
+              schedules, publishes across six networks, and learns from what worked.
             </p>
             <p>
-              A bachelor&apos;s student in Computer Science and Artificial Intelligence at
-              IE University Madrid, Verdugo&apos;s holdings span <strong>ten distinct
-              positions</strong> across study tech, sports analytics, real estate, and
-              what he describes as “one or two regrettable bets I refuse to delete from
-              the books.”
+              Analysts with access to the repository count more than{" "}
+              <strong>2,500 commits since June</strong>. The product is live at{" "}
+              <a
+                href="https://www.quetzaltech.es"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-tribune-red decoration-2 underline-offset-2 hover:bg-tribune-red hover:text-paper transition"
+              >
+                quetzaltech.es
+              </a>
+              , and Verdugo, asked to value it, offered only that it was{" "}
+              <em>“worth more every week, because it learns.”</em>
             </p>
             <p>
-              Headline holdings include <strong>Brainy Buddy ($BRAINY)</strong>, an AI
-              study planner he built from zero to production;{" "}
-              <strong>Casa del Sol Holidays ($CASA)</strong>, a live short-term rental
-              platform serving real customers; and <strong>SocialMedia AI ($SOCIAL)</strong>,
-              an unfinished SaaS he describes as “one of my biggest projects, currently
-              aging like a fine wine.”
+              By day, Verdugo works as an <strong>AI Engineer at Vidalytics</strong>, a
+              seat he describes as “learning a ton, every single week.” He also runs a
+              small over-the-counter desk: websites and AI automations for clients
+              including <strong>Chaparral Golf Club</strong>,{" "}
+              <strong>Palacete 10</strong> and <strong>VAMOZ Marbella</strong>.
             </p>
             <p>
-              Not every position is a winner. Two assets — <strong>$DEGU</strong> (a
-              government corruption tracker that drew real traffic before hosting bills
-              proved unsustainable) and <strong>$ETERNAL</strong> (a privacy-first memory
-              vault) — are listed as DELISTED. Verdugo refuses to remove them. “The losses
-              are part of the track record,” he said.
+              Older holdings remain on the books, led by the live rental platform{" "}
+              <strong>Casa del Sol ($CASA)</strong>. So do four delisted positions,
+              among them <strong>$BRAINY</strong> and <strong>$DEGU</strong>, which
+              Verdugo refuses to remove. “The losses are part of the track record,” he
+              said.
             </p>
             <p className="text-ink-soft italic">
               Continued on §1 — BUSINESS &amp; MARKETS, page below ↓
@@ -133,12 +144,19 @@ export default function FrontPage() {
               ✦ MARKET PULSE ✦
             </p>
             <p className="font-display font-black text-ink text-3xl leading-none">
-              $SVR <span className="text-trade-up" style={{ color: "#0a7a35" }}>▲ 8.42%</span>
+              $SVR{" "}
+              <span className="text-trade-up" style={{ color: "#0a7a35" }}>
+                ▲ {indexQuotes.changePct.toFixed(2)}%
+              </span>
             </p>
             <p className="font-mono text-[12px] text-ink-soft mt-2 leading-relaxed">
-              INDEX 1,247.83 · OPEN 1,150.32 · HIGH 1,289.40
+              INDEX {indexQuotes.current.toLocaleString("en-US", { minimumFractionDigits: 2 })}
+              {" · "}OPEN {indexQuotes.open.toLocaleString("en-US", { minimumFractionDigits: 2 })}
+              {" · "}HIGH {indexQuotes.high.toLocaleString("en-US", { minimumFractionDigits: 2 })}
               <br />
-              VOLUME — 10 HOLDINGS · BREADTH — 6/10 ADVANCING
+              VOLUME — {b.total} HOLDINGS · BREADTH — {b.advancing}/{b.total} ADVANCING
+              <br />
+              LEADER — ${flagship.ticker} ▲ +{flagship.changePct.toFixed(1)}%
             </p>
           </div>
 
@@ -149,7 +167,7 @@ export default function FrontPage() {
             </p>
             <ol className="font-headline text-ink space-y-2 text-[15px]">
               {[
-                ["§1", "BUSINESS & MARKETS", "The Trading Floor"],
+                ["§1", "BUSINESS & MARKETS", "Quetzal & The Trading Floor"],
                 ["§2", "SPORTS", "Football, Tennis & The Tarifa Years"],
                 ["§3", "LIFESTYLE", "Madrid · Tarifa · Málaga"],
                 ["§4", "PROFILE", "The Analyst, In His Own Words"],
@@ -171,10 +189,10 @@ export default function FrontPage() {
           {/* Pull quote */}
           <blockquote className="border-l-4 border-tribune-red pl-4 py-2">
             <p className="font-display italic text-ink text-2xl leading-tight">
-              “I eat my own cooking. I trust my portfolio with my own money.”
+              “Information beats effort. Authenticity beats polish.”
             </p>
             <footer className="smcp text-[11px] text-ink-soft mt-2">
-              — VERDUGO, ON HIS PERSONAL TOOL <strong>FINANCEHUB</strong>
+              — THE FOUNDING DOCTRINE OF <strong>QUETZAL</strong>
             </footer>
           </blockquote>
 

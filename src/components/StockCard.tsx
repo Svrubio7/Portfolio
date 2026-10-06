@@ -11,6 +11,7 @@ const trendBadge: Record<string, string> = {
   dev: "◆ DEV",
   stable: "▬ STABLE",
   underperform: "▼ UNDER",
+  acquired: "⇢ ACQUIRED",
   delisted: "✕ DELISTED",
 };
 
@@ -19,6 +20,7 @@ const trendColor: Record<string, string> = {
   dev: "text-blue-400",
   stable: "text-trade-amber",
   underperform: "text-trade-down",
+  acquired: "text-trade-acquired",
   delisted: "text-trade-muted",
 };
 
@@ -46,7 +48,7 @@ export default function StockCard({
         whileHover={{ y: -4, transition: { duration: 0.2 } }}
         className={cn(
           "group relative text-left bg-trade-panel border border-trade-grid hover:border-trade-amber/60 transition-colors p-4 flex flex-col gap-3",
-          project.trend === "delisted" && "opacity-75"
+          (project.trend === "delisted" || project.trend === "acquired") && "opacity-75"
         )}
       >
         {/* Header row */}
@@ -94,7 +96,9 @@ export default function StockCard({
           <div>
             <p className="text-trade-muted text-[10px] tracking-wider">PRICE</p>
             <p className="text-trade-text text-base">
-              {project.trend === "delisted" ? "—" : project.price.toFixed(2)}
+              {project.trend === "delisted" || project.trend === "acquired"
+                ? "—"
+                : project.price.toFixed(2)}
             </p>
           </div>
           <div className="text-right">
@@ -102,6 +106,8 @@ export default function StockCard({
             <p className={cn("text-base", tc)}>
               {project.trend === "delisted"
                 ? "DELISTED"
+                : project.trend === "acquired"
+                ? "MERGED"
                 : `${project.changePct > 0 ? "+" : ""}${project.changePct.toFixed(1)}%`}
             </p>
           </div>
@@ -173,11 +179,18 @@ export default function StockCard({
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 font-mono text-[11px] border-y border-trade-grid py-3">
                 {[
-                  ["PRICE", project.trend === "delisted" ? "—" : project.price.toFixed(2)],
+                  [
+                    "PRICE",
+                    project.trend === "delisted" || project.trend === "acquired"
+                      ? "—"
+                      : project.price.toFixed(2),
+                  ],
                   [
                     "CHG",
                     project.trend === "delisted"
                       ? "DELISTED"
+                      : project.trend === "acquired"
+                      ? "MERGED"
                       : `${project.changePct > 0 ? "+" : ""}${project.changePct.toFixed(1)}%`,
                   ],
                   ["MKT CAP", project.marketCap],

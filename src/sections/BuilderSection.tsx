@@ -10,32 +10,34 @@ import { motion } from "framer-motion";
  */
 export default function BuilderSection() {
   const stack = [
-    "Python", "TypeScript", "C++", "SQL", "PySpark", "pandas",
-    "scikit-learn", "PyTorch", "LangGraph", "Next.js", "FastAPI",
-    "Django", "Vue.js", "PostgreSQL", "Redis", "Celery",
-    "AWS · EMR · S3", "Azure", "Docker", "GitHub Actions",
+    "Python", "TypeScript", "C++", "SQL", "Swift", "PySpark",
+    "pandas", "scikit-learn", "PyTorch", "LLM agents", "MCP",
+    "Gemini", "Claude", "LangGraph", "Next.js", "React", "FastAPI",
+    "Django", "Vue.js", "PostgreSQL", "Supabase", "Inngest",
+    "Remotion", "Redis", "Celery", "AWS · EMR · S3", "Azure",
+    "Vercel", "Docker", "GitHub Actions",
   ];
 
   const currently = [
     {
-      tag: "🟢",
-      name: "Brainy Buddy",
-      desc: "Shipping the EU-compliant LTI extension to universities",
+      tag: "🦜",
+      name: "Quetzal",
+      desc: "Co-founder. Engineering the AI social media autopilot",
+    },
+    {
+      tag: "💼",
+      name: "Vidalytics",
+      desc: "AI Engineer. Learning a ton, every single week",
+    },
+    {
+      tag: "🤝",
+      name: "Client mandates",
+      desc: "Websites and AI automations for companies in Spain",
     },
     {
       tag: "📈",
-      name: "SocialMedia AI",
-      desc: "Video pattern analysis + automated editing SaaS",
-    },
-    {
-      tag: "📈",
-      name: "FinanceHub",
-      desc: "Personal market-analysis cockpit I trade from",
-    },
-    {
-      tag: "🎓",
-      name: "IE University",
-      desc: "Wrapping the CS + AI bachelor's, May 2026",
+      name: "Jarvis 2.0",
+      desc: "Voice-first personal agent, on nights and weekends",
     },
   ];
 
@@ -97,6 +99,7 @@ export default function BuilderSection() {
               "MACHINE LEARNING ENGINEER",
               "SOFTWARE ENGINEER",
               "AI ENGINEER",
+              "FOUNDER",
             ].map((role) => (
               <span
                 key={role}
@@ -117,8 +120,12 @@ export default function BuilderSection() {
               enough to delete it.
             </p>
             <p>
-              Most of my projects went one way. Some went the other. Both
-              counted, and both are listed on the trading floor above.
+              These days that loop runs in three places: at{" "}
+              <strong>Vidalytics</strong>, where I work as an AI Engineer; at{" "}
+              <strong>Quetzal</strong>, the startup I co-founded; and on the
+              client work I take on for companies that want something
+              automated. Most of my projects went one way. Some went the other.
+              Both counted, and both are listed on the trading floor above.
             </p>
           </div>
 
